@@ -5,6 +5,7 @@
   Assign the class definition to variable IPCIDR.
 */
 const IPCIDR = require('ip-cidr');
+
 /*
   Import the built-in path module.
   See https://nodejs.org/api/path.html
@@ -63,12 +64,7 @@ function getFirstIpAddress(cidrStr, callback) {
   return callback({ipv4: firstIpAddress, ipv6: ipv6Address}, callbackError);
 }
 
-/**
- * Calculates an IPv4-mapped IPv6 address.
- * @param {string} ipv4 - An IPv4 address in dotted-quad format.
- * @return {*} (ipv6Address) - An IPv6 address string or null if a run-time problem was detected.
- */
- }
+
 /*
   This section is used to test function and log any errors.
   We will make several positive and negative tests.
@@ -94,8 +90,7 @@ function main() {
       }
       console.log(`  Response returned from GET request: ${JSON.stringify(data)}`);
     });
-  }
-  
+  }  
   // Iterate over sampleIpv4s and pass the element's value to getIpv4MappedIpv6Address().
   for (let i = 0; i < sampleIpv4sLen; i++) {
     console.log(`\n--- Test Number ${i + 1} getIpv4MappedIpv6Address(${sampleIpv4s[i]}) ---`);
